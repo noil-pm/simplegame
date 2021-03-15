@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<!--
+
+
+
+
+
+It is my first game in JavaScript :)
+  
+  Это простая игра! Вы можете угадать число от 1 до 100
+    
+
+
+
+   Thanks YOU very much Alif Academy 
+
+
+
+  Created by Noil
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+-->
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Крутая игра</title>
+    <style>
+        body{
+            background-color: darkslategrey;
+        }
+        input{
+            width: auto;
+            height: 20px;
+        }
+        #num{
+            background-color: teal;
+        }
+        #num:hover{
+            background-color: yellow;
+        }
+        #button{
+            background-color: silver;
+            width: 40px;
+            height: 30px;
+        }
+        #button:hover{
+            background-color: tomato;
+        }
+        h1, h2{
+            color: rgb(60, 255, 0);
+        }
+        p{
+            font-size: 30px;
+            font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+        }
+    </style>
+</head>
+<body>
+    <h1>Угадай число</h1>
+    <h2>от 1 до 100</h2>
+    <input type="number" id="num">
+    <input type="button" id="button" value="Ok" onclick="show()">
+    <p id="rslt"></p>
+    <script>
+        const numer = Math.floor(Math.random()*100);
+
+        function show(){
+            
+            let number = document.getElementById("num").value;
+            console.log(numer);
+            
+            if(number < numer){
+                document.getElementById("rslt").innerHTML= "Мало, попробуйте ещё раз.";
+            }
+            else if(number > numer){
+                document.getElementById("rslt").innerHTML= "Много, попробуйте ещё раз.";
+            }
+            else if(number==numer){
+                document.getElementById("rslt").innerHTML= "Правильно! Это число " + numer + "!";
+            }
+            else{
+                let b = show();
+                do{
+                    alert("Game over. Число было " + numer); 
+                }
+                while(b<5);
+                
+            }
+        }
+    </script>
+</body>
+</html>
